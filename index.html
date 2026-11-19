@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Colo-It — Colouring Books & Creative Kits for Kenyan Families</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ff6b47'/%3E%3Cpath d='M50 15a35 35 0 1 0 0 70h7a9 9 0 0 0 0-18h-4a6 6 0 0 1 0-12h13a19 19 0 0 0 0-38z' fill='%23fff8f0'/%3E%3Ccircle cx='31' cy='43' r='5' fill='%23ff6b47'/%3E%3Ccircle cx='45' cy='31' r='5' fill='%23ffc93c'/%3E%3Ccircle cx='62' cy='31' r='5' fill='%235ecdb4'/%3E%3Ccircle cx='74' cy='46' r='5' fill='%23ff9eb5'/%3E%3C/svg%3E">
-  <meta name="description" content="Colo-It sells colouring books and creative kits for kids, families, and teams in Kenya. No sign-in. Pay 50% now, 50% on delivery." />
+  <link rel="icon" type="image/png" href="https://i.imgur.com/Yxm676F.png">
+  <meta name="description" content="Colouring books and creative kits for families, schools and teams in Kenya. No sign-in. Pay 50% now, 50% on delivery." />
   <meta name="theme-color" content="#fff8f0" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#1a0f0a" media="(prefers-color-scheme: dark)" />
   <script>
@@ -20,31 +20,35 @@
 
   <style>
     :root {
-      --bg: #fff8f0; --surface: #fff; --surface-2: #fff1e3;
-      --text: #2a1810; --muted: #8a6b5c; --border: #f0d9c4;
-      --accent: #ff6b47; --accent-hover: #f04a24; --accent-soft: #ffe8df;
-      --yellow: #ffc93c; --yellow-soft: #fff4d4;
-      --mint: #5ecdb4; --mint-soft: #e0f7f1;
-      --pink: #ff9eb5; --pink-soft: #ffe4ec;
-      --success: #25D366; --success-hover: #1ebe5a;
-      --error: #e63946;
-      --shadow: 0 2px 8px rgba(42,24,16,0.06);
-      --shadow-lg: 0 16px 48px rgba(42,24,16,0.12);
-      --radius: 28px; --radius-sm: 16px; --radius-pill: 999px;
+      --bg: #fff8f0; --surface: #fffdf9; --surface-2: #f3ece4;
+      --text: #2a1810; --muted: #725f54; --border: #e5d9ce;
+      --accent: #d9573b; --accent-hover: #b9432d; --accent-soft: #f7e5dd;
+      --yellow: #e5d9ce; --yellow-soft: #f3ece4;
+      --mint: #d9573b; --mint-soft: #f7e5dd;
+      --pink: #d9573b; --pink-soft: #f7e5dd;
+      --success: #d9573b; --success-hover: #b9432d;
+      --error: #b9432d;
+      --chip-kids-bg: #f3ece4; --chip-kids-fg: #2a1810;
+      --chip-adults-bg: #f7e5dd; --chip-adults-fg: #8f3828;
+      --shadow: 0 2px 8px rgba(42,24,16,0.05);
+      --shadow-lg: 0 14px 34px rgba(42,24,16,0.1);
+      --radius: 20px; --radius-sm: 12px; --radius-pill: 999px;
       --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition: 0.2s ease;
     }
     html[data-theme='dark'] {
-      --bg: #1a0f0a; --surface: #2a1810; --surface-2: #3a2418;
-      --text: #fff8f0; --muted: #d4b8a8; --border: #4a3020;
-      --accent: #ff8563; --accent-hover: #ffa086; --accent-soft: #4a2018;
-      --yellow: #ffd95e; --yellow-soft: #3a2e10;
-      --mint: #7ee0c7; --mint-soft: #123a30;
-      --pink: #ffb8cc; --pink-soft: #3a1820;
-      --success: #25D366; --success-hover: #34e174;
-      --error: #ff6b6b;
-      --shadow: 0 2px 8px rgba(0,0,0,0.3);
-      --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
+      --bg: #1c1511; --surface: #28201b; --surface-2: #332820;
+      --text: #fff8f0; --muted: #c8b8aa; --border: #493a30;
+      --accent: #ee795c; --accent-hover: #ff987e; --accent-soft: #47271f;
+      --yellow: #493a30; --yellow-soft: #332820;
+      --mint: #ee795c; --mint-soft: #47271f;
+      --pink: #ee795c; --pink-soft: #47271f;
+      --success: #ee795c; --success-hover: #ff987e;
+      --error: #ff987e;
+      --chip-kids-bg: #332820; --chip-kids-fg: #fff8f0;
+      --chip-adults-bg: #47271f; --chip-adults-fg: #ffd1c4;
+      --shadow: 0 2px 8px rgba(0,0,0,0.25);
+      --shadow-lg: 0 14px 34px rgba(0,0,0,0.38);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -60,9 +64,14 @@
     img { display: block; max-width: 100%; }
     .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
     h1, h2, h3, h4 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
 
     .header {
       position: sticky; top: 0; z-index: 100;
+      background: var(--bg);
       background: color-mix(in srgb, var(--bg) 92%, transparent);
       backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
@@ -74,9 +83,15 @@
     }
     .logo-mark {
       width: 32px; height: 32px; border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent), var(--yellow));
+      background: var(--accent);
       flex-shrink: 0;
     }
+    .logo-image {
+      display: block; width: 124px; height: 46px;
+      object-fit: cover; object-position: center;
+      flex: 0 1 auto;
+    }
+    .footer .logo-image { width: 150px; height: 54px; }
     .header-actions { display: flex; align-items: center; gap: 10px; }
     .icon-btn {
       width: 40px; height: 40px; border-radius: 50%;
@@ -121,16 +136,8 @@
       0%, 100% { transform: rotate(-8deg); }
       50% { transform: rotate(8deg); }
     }
-    .hero::before {
-      content: ''; position: absolute; top: -100px; left: -100px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, var(--pink-soft) 0%, transparent 70%); z-index: -1;
-    }
-    .hero::after {
-      content: ''; position: absolute; bottom: -100px; right: -100px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, var(--yellow-soft) 0%, transparent 70%); z-index: -1;
-    }
+    .hero::before, .hero::after { content: none; }
+    .hero-doodles { display: none; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 0.85rem; font-weight: 700;
@@ -161,11 +168,12 @@
       border-radius: var(--radius-pill); margin-bottom: 16px;
     }
 
+    .collection, .single-items, .order-form, .corporate-inquiry, .faq { scroll-margin-top: 84px; }
     .collection { padding: 80px 0; border-top: 1px solid var(--border); }
 
     .tab-wrapper {
       display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 15px; margin-bottom: 32px;
+      flex-wrap: wrap; gap: 15px; margin-bottom: 24px;
     }
     .tab-bar {
       background: var(--surface); border-radius: var(--radius-pill);
@@ -213,10 +221,7 @@
       transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .product-card:hover .product-image img { transform: scale(1.06); }
-    .product-image-adults { background: linear-gradient(135deg, var(--pink-soft) 0%, var(--accent-soft) 100%); }
-    .product-image-kids { background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--mint-soft) 100%); }
-    .product-image-corporate { background: linear-gradient(135deg, var(--mint-soft) 0%, var(--accent-soft) 100%); }
-    .product-image-pens { background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--pink-soft) 100%); }
+    .product-image-adults, .product-image-kids, .product-image-corporate, .product-image-pens { background: var(--surface-2); }
     .product-tag {
       position: absolute; top: 12px; left: 12px;
       background: var(--surface); color: var(--text);
@@ -257,6 +262,29 @@
       grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--muted);
     }
     .empty-state h3 { color: var(--text); margin-bottom: 6px; }
+
+    /* SINGLE ITEMS SECTION */
+    .single-items { padding: 80px 0; border-top: 1px solid var(--border); background: var(--surface-2); }
+    .single-kit { font-size: 0.75rem; font-weight: 700; color: var(--muted); margin-bottom: 10px; }
+    .single-kit strong { color: var(--accent); }
+    .single-pen-option { display: flex; align-items: center; gap: 8px; margin: 0 0 14px; color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+    .single-pen-option input { width: 18px; height: 18px; accent-color: var(--accent); }
+    .detail-pen-option { display: grid; grid-template-columns: 1fr 90px; align-items: center; gap: 8px 12px; margin: 0 0 16px; font-size: 0.9rem; font-weight: 700; }
+    .detail-pen-option input { width: 100%; padding: 9px 10px; border: 2px solid var(--border); border-radius: 10px; background: var(--bg); color: var(--text); font: inherit; }
+    .detail-pen-option small { grid-column: 1 / -1; color: var(--muted); font-size: 0.78rem; font-weight: 500; }
+    .product-image-single {
+      display: grid; place-items: center;
+      background: var(--surface-2);
+    }
+
+    /* Image fallback — small monogram, not an emoji blob */
+    .img-fallback {
+      display: none; place-items: center; width: 100%; height: 100%;
+      font-size: 1rem; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--muted);
+      background: var(--surface-2);
+    }
+    .img-fallback.is-shown { display: grid; }
 
     /* DETAIL MODAL */
     .detail-overlay {
@@ -304,8 +332,8 @@
       padding: 6px 14px; font-size: 0.82rem; font-weight: 700;
     }
     .detail-chip.pages { color: var(--accent); }
-    .detail-chip.kids { background: var(--mint-soft); color: #1a7a63; }
-    .detail-chip.adults { background: var(--pink-soft); color: #b23a5a; }
+    .detail-chip.kids { background: var(--chip-kids-bg); color: var(--chip-kids-fg); }
+    .detail-chip.adults { background: var(--chip-adults-bg); color: var(--chip-adults-fg); }
     .detail-description { color: var(--muted); line-height: 1.65; margin-bottom: 22px; font-size: 0.98rem; }
     .detail-price { font-size: 2.1rem; font-weight: 800; color: var(--accent); margin-bottom: 6px; }
     .detail-price small { font-size: 1rem; font-weight: 500; color: var(--muted); }
@@ -375,14 +403,21 @@
     }
     .faq-item.open { border-color: var(--accent); }
     .faq-q {
-      font-weight: 700; font-size: 1rem;
+      width: 100%; font: inherit; font-weight: 700; font-size: 1rem;
       display: flex; justify-content: space-between; align-items: center;
-      cursor: pointer; gap: 16px; user-select: none;
+      cursor: pointer; gap: 16px; user-select: none; text-align: left;
     }
     .faq-q span { color: var(--accent); font-size: 1.5rem; transition: transform var(--transition); }
     .faq-item.open .faq-q span { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s ease; color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
-    .faq-item.open .faq-a { max-height: 500px; padding-top: 14px; }
+    /* Grid trick — no hardcoded max-height, works for any answer length */
+    .faq-a {
+      display: grid; grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease, padding 0.3s ease;
+      color: var(--muted); font-size: 0.95rem; line-height: 1.7;
+      padding-top: 0;
+    }
+    .faq-a > div { overflow: hidden; }
+    .faq-item.open .faq-a { grid-template-rows: 1fr; padding-top: 14px; }
 
     .footer { border-top: 1px solid var(--border); padding: 48px 0; text-align: center; background: var(--surface-2); }
     .footer p { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
@@ -432,25 +467,46 @@
       html { scroll-behavior: auto; }
     }
     :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+    /* Consistent, restrained component finish across both themes. */
+    .hero-badge {
+      background: var(--surface-2); color: var(--text);
+      border: 1px solid var(--border); transform: none;
+    }
+    .product-card { border-width: 1px; }
+    .product-card:hover { transform: translateY(-3px); }
+    .product-tag { box-shadow: var(--shadow); }
+    .btn, .btn-open, .btn-wa-large, .floating-order { transition: transform var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition); }
+    .btn-primary, .btn-wa, .btn-wa-large, .floating-order { box-shadow: 0 3px 10px rgba(42,24,16,0.12); }
+    .btn-primary:hover, .btn-wa:hover, .btn-wa-large:hover, .floating-order:hover { box-shadow: 0 6px 16px rgba(42,24,16,0.16); }
+    .tab-bar { border-width: 1px; }
+    .faq-item { border-width: 1px; }
+    .form-wrap { border-width: 1px; }
+    .field input, .field select, .field textarea { transition: border-color var(--transition), box-shadow var(--transition); }
+    @media (max-width: 560px) {
+      .hero h1 { font-size: clamp(2.35rem, 11vw, 3.4rem); }
+      .section-header { margin-bottom: 32px; }
+      .form-wrap { padding: 26px 18px; }
+      .faq-item { padding: 18px; }
+    }
   </style>
   <meta property="og:title" content="Colo-It — Colouring Books for Kenyan Families">
-<meta property="og:description" content="Real books, real pens. Pay 50% now and 50% on delivery.">
-<meta property="og:image" content="https://i.imgur.com/n8QMzby.jpeg">
-<meta property="og:url" content="https://colo-it.co.ke">
-<meta property="og:type" content="website">
+  <meta property="og:description" content="Real books, real pens. Pay 50% now and 50% on delivery.">
+  <meta property="og:image" content="https://i.imgur.com/n8QMzby.jpeg">
+  <meta property="og:url" content="https://colo-it.co.ke">
+  <meta property="og:type" content="website">
 </head>
 <body>
 
 <header class="header">
   <div class="container header-inner">
     <a href="#" class="logo" aria-label="Colo-It home">
-      <span class="logo-mark" aria-hidden="true"></span>
-      Colo-It
+      <img class="logo-image" src="https://i.imgur.com/Yxm676F.png" alt="Colo-It" />
     </a>
     <div class="header-actions">
       <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
       </button>
       <a href="#order" class="btn btn-wa">Order Now</a>
     </div>
@@ -466,14 +522,14 @@
       <span class="hero-doodle hero-doodle-three">🖍️</span>
     </div>
     <div class="container">
-      <span class="hero-badge">🎉 Colour. Create. Imagine.</span>
+      <span class="hero-badge">Colour. Create. Imagine.</span>
       <h1>Colouring books that get <em>everyone</em> creating.</h1>
       <p class="hero-sub">
-        For Kenyan families, schools and teams. Real books, real pens, real creative time  with the people in the room. No screens. No sign-in. Just colour.
+        For Kenyan families, schools and teams. Real books, real pens, real creative time with the people in the room. No screens. No sign-in. Just colour.
       </p>
       <div class="hero-ctas">
+        <a href="#singles" class="btn btn-outline">Shop Single Items</a>
         <a href="#collection" class="btn btn-primary">See the Collection</a>
-        <a href="#order" class="btn btn-outline">Order a Kit — KES 1,500</a>
       </div>
     </div>
   </section>
@@ -481,34 +537,45 @@
   <section class="collection" id="collection">
     <div class="container">
       <div class="section-header">
-        <span class="eyebrow">🛍️ Shop the Collection</span>
-        <h2>Pick your book. Or grab them all.</h2>
+        <span class="eyebrow">Shop the Collection</span>
+        <h2>Pick your book, or grab them all.</h2>
         <p>Each kit comes with a colouring book and a full set of smooth-glide pens. Click <strong>Open This</strong> to see full details.</p>
       </div>
 
       <div class="tab-wrapper">
         <div class="tab-bar" role="tablist" aria-label="Age category tabs">
-          <button class="tab-btn active" data-category="all" role="tab" aria-selected="true">
-            <i>✦</i> All <span class="tab-count" id="countAll">0</span>
+          <button class="tab-btn active" id="tab-all" data-category="all" role="tab" aria-selected="true" aria-controls="productGrid">
+            All <span class="tab-count" id="countAll">0</span>
           </button>
-          <button class="tab-btn" data-category="kids" role="tab" aria-selected="false">
-            <i>🧒</i> Kids <span class="tab-count" id="countKids">0</span>
+          <button class="tab-btn" id="tab-kids" data-category="kids" role="tab" aria-selected="false" aria-controls="productGrid">
+            Kids <span class="tab-count" id="countKids">0</span>
           </button>
-          <button class="tab-btn" data-category="adults" role="tab" aria-selected="false">
-            <i>👤</i> Adults <span class="tab-count" id="countAdults">0</span>
+          <button class="tab-btn" id="tab-adults" data-category="adults" role="tab" aria-selected="false" aria-controls="productGrid">
+            Adults <span class="tab-count" id="countAdults">0</span>
           </button>
         </div>
-        <div class="product-count" id="productCount"></div>
+        <div class="product-count" id="productCount" role="status" aria-live="polite"></div>
       </div>
 
-      <div id="productGrid" class="product-grid"></div>
+      <div id="productGrid" class="product-grid" role="tabpanel" aria-labelledby="tab-all" tabindex="0"></div>
 
       <div style="text-align:center; padding: 28px 20px; background: var(--surface-2); border-radius: var(--radius); border: 2px solid var(--border);">
         <p style="font-size:0.95rem; margin-bottom:16px; line-height:1.6;">
-          Buying multiple kits? Bulk discount kicks in at 10+ kits — <strong style="color:var(--accent);">KES 1,300 each</strong>.
+          Buying multiple kits? Bulk pricing starts at 10 — <strong style="color:var(--accent);">KES 1,300 each</strong>.
         </p>
         <a href="#corporate" class="btn btn-outline">Plan a Group Session →</a>
       </div>
+    </div>
+  </section>
+
+  <section class="single-items" id="singles">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Shop Single Items</span>
+        <h2>Just want one? Grab it solo.</h2>
+        <p>Every item below is pulled from one of our kits. Buy it on its own — no full kit needed.</p>
+      </div>
+      <div id="singlesGrid" class="product-grid" aria-live="polite"></div>
     </div>
   </section>
 
@@ -516,9 +583,9 @@
     <div class="container">
       <div class="form-wrap">
         <div class="form-header">
-          <span class="eyebrow">🛒 Order the Kit</span>
-          <h2>Fill this in. We'll WhatsApp you back.</h2>
-          <p>Takes 30 seconds. <strong>No account needed.</strong> We confirm on WhatsApp first, then share the M-Pesa number.</p>
+          <span class="eyebrow">Standard Kit &amp; Bulk Orders</span>
+          <h2>Tell us what you need.</h2>
+          <p>Each standard kit includes one randomly selected colouring kit and one pencil set. If you prefer a specific kit, mention it in the description below. Use this form for standard kit quantities and group orders; for a specific product or single item, choose <strong>Order on WhatsApp</strong> on its product card. No account needed.</p>
         </div>
 
         <form id="orderForm" novalidate>
@@ -535,7 +602,7 @@
               <div class="field-error">Enter a valid Kenyan number.</div>
             </div>
             <div class="field">
-              <label for="orderQty">How many kits? *</label>
+              <label for="orderQty">How many standard kits? *</label>
               <input id="orderQty" name="qty" type="number" min="1" max="100" value="1" required />
               <div class="field-error">Enter a quantity between 1 and 100.</div>
             </div>
@@ -549,7 +616,7 @@
               <option>Westlands / Parklands</option>
               <option>Kilimani / Kileleshwa</option>
               <option>Karen / Langata</option>
-              <option>Eastlands (Embakasi,Donholm, Buruburu and others)</option>
+              <option>Eastlands (Embakasi, Donholm, Buruburu and others)</option>
               <option>Rongai / Kitengela</option>
               <option>Thika Road (Roysambu, Kasarani)</option>
               <option>Outside Nairobi (courier)</option>
@@ -558,8 +625,8 @@
           </div>
 
           <div class="field">
-            <label for="orderNotes">Anything else? <span class="optional">(optional)</span></label>
-            <textarea id="orderNotes" name="notes" rows="2" placeholder="Gift wrap, event date, or specific books you want."></textarea>
+            <label for="orderNotes">Description / anything else? <span class="optional">(optional)</span></label>
+            <textarea id="orderNotes" name="notes" rows="2" placeholder="Add a preferred kit, gift wrap, event date, or other requests."></textarea>
           </div>
 
           <div class="total-preview" id="totalPreview">
@@ -567,7 +634,7 @@
           </div>
 
           <div class="payment-note">
-            <span style="font-size:1.6rem;">💳</span>
+            <span style="font-size:1.6rem;" aria-hidden="true">💳</span>
             <span><strong>Pay 50% now</strong> (M-Pesa) and <strong>50% on delivery</strong>. We confirm everything on WhatsApp first.</span>
           </div>
 
@@ -585,7 +652,7 @@
     <div class="container">
       <div class="form-wrap form-wrap-alt">
         <div class="form-header">
-          <span class="eyebrow">🎉 For Teams & Schools</span>
+          <span class="eyebrow">For Teams &amp; Schools</span>
           <h2>Planning a group session?</h2>
           <p>Team building, school activity, church group, birthday — tell us the details and we'll put together a quote.</p>
         </div>
@@ -664,24 +731,24 @@
       <h2>Quick answers.</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-q" role="button" tabindex="0">Is this for kids? <span>+</span></div>
-          <div class="faq-a">Both. We have the Family Kit (ages 6–14) and the Social Kit (18+). Adults love it more, honestly.</div>
+          <button class="faq-q" type="button" aria-expanded="false">Is this for kids? <span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div>Both. We have the Family Kit (ages 6–14) and the Social Kit (18+). Adults love it more, honestly.</div></div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" role="button" tabindex="0">How does payment work? <span>+</span></div>
-          <div class="faq-a"><strong>Pay 50% now via M-Pesa to confirm your order and 50% on delivery.</strong> We share the M-Pesa number on WhatsApp once you've filled the order form.</div>
+          <button class="faq-q" type="button" aria-expanded="false">How does payment work? <span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div><strong>Pay 50% now via M-Pesa to confirm your order and 50% on delivery.</strong> We share the M-Pesa number on WhatsApp once you've filled the order form.</div></div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" role="button" tabindex="0">Do I need to create an account? <span>+</span></div>
-          <div class="faq-a">Nope. No sign-in, no cart, no passwords. Fill the form, get a WhatsApp reply, done.</div>
+          <button class="faq-q" type="button" aria-expanded="false">Do I need to create an account? <span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div>No. No sign-in, no cart, no passwords. Fill the form, get a WhatsApp reply, done.</div></div>
         </div>
         <div class="faq-item">
-          <div class="faq-q" role="button" tabindex="0">Can I order for a group or event? <span>+</span></div>
-          <div class="faq-a">Yes. Bulk orders of 10+ kits get KES 1,300 per kit. WhatsApp us with your numbers and dates using the group-session form above.</div>
+          <button class="faq-q" type="button" aria-expanded="false">Can I order for a group or event? <span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div>Yes. Bulk orders of 10+ kits get KES 1,300 per kit. WhatsApp us with your numbers and dates using the group-session form above.</div></div>
         </div>
-          <div class="faq-item">
-          <div class="faq-q" role="button" tabindex="0">What is the refund policy? <span>+</span></div>
-          <div class="faq-a">Deposits are refundable up to 24 hours before delivery, but some charges may apply.</div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">What is the refund policy? <span aria-hidden="true">+</span></button>
+          <div class="faq-a"><div>Deposits are refundable up to 24 hours before delivery, but some charges may apply.</div></div>
         </div>
       </div>
     </div>
@@ -691,7 +758,7 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="logo"><span class="logo-mark" aria-hidden="true"></span>Colo-It</div>
+    <div class="logo"><img class="logo-image" src="https://i.imgur.com/Yxm676F.png" alt="Colo-It" /></div>
     <span style="display:block;font-size:0.82rem;color:var(--muted);margin:6px 0 14px;">Colour. Create. Imagine.</span>
     <p>Nairobi, Kenya · WhatsApp: +254 759 091 420 · © 2026 Colo-It</p>
   </div>
@@ -721,8 +788,7 @@
   var BULK_MIN = 10;
 
   /* ================================================================
-     PRODUCTS — image is now a full URL.
-     Replace any URL below with your own (Unsplash, Cloudinary, Imgur...).
+     PRODUCTS (kits)
      ================================================================ */
   var products = [
     {
@@ -731,11 +797,11 @@
       category: 'adults',
       tag: 'Adults · Social',
       imageClass: 'product-image-adults',
-      price: 1500,
+      price: 630,
       age: '18+',
       image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80',
-      fallbackEmoji: '🎨',
-      description: '30+ modern designs for grown-up colouring afternoons. Abstract patterns, city skylines and nature scenes. Great for game nights and friends\u2019 meetups.',
+      monogram: 'SK',
+      description: 'Three modern designs for grown-up colouring afternoons, with abstract patterns, city skylines and nature scenes. Great for game nights and meetups.',
       alt: 'The Social Kit colouring book cover'
     },
     {
@@ -744,11 +810,11 @@
       category: 'kids',
       tag: 'Kids · Family',
       imageClass: 'product-image-kids',
-      price: 1300,
+      price: 840,
       age: '6\u201314',
       image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80',
-      fallbackEmoji: '🦄',
-      description: 'Playful animals, friendly characters, and simple shapes. Designed for ages 6\u201314. Great for Sunday afternoons and school holidays.',
+      monogram: 'FK',
+      description: 'Four colouring books featuring playful animals, friendly characters and simple shapes. Designed for ages 6–14 and ideal for Sunday afternoons or school holidays.',
       alt: 'The Family Kit colouring book cover'
     },
     {
@@ -757,25 +823,25 @@
       category: 'adults',
       tag: 'Corporate · Teams',
       imageClass: 'product-image-corporate',
-      price: 1500,
+      price: 2100,
       age: 'Teams',
       image: 'https://i.imgur.com/n8QMzby.jpeg',
-      fallbackEmoji: '🤝',
-      description: 'Minimalist, geometric, and mindful designs. Built for team offsites and de-stress sessions.',
+      monogram: 'TK',
+      description: 'A set of 10 books with minimalist, geometric and mindful designs, made for team offsites and creative group sessions.',
       alt: 'The Team Kit colouring book cover'
     },
     {
       id: 4,
-      title: 'The Pen Set',
+      title: 'The Pencils Set',
       category: 'kids',
       tag: 'Accessory',
       imageClass: 'product-image-pens',
-      price: 600,
+      price: 450,
       age: 'Refill',
       image: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&q=80',
-      fallbackEmoji: '🖍️',
-      description: '12 smooth-glide colour pens. Consistent ink flow, no smudging and the perfect balance of colours; not too many, not too few.',
-      alt: 'The Pen Set \u2014 12 colour pens'
+      monogram: 'PS',
+      description: 'Twelve smooth-glide colour pencils in a practical everyday set.',
+      alt: 'The Pen Set \u2014 12 colour pencils'
     },
     {
       id: 5,
@@ -783,11 +849,11 @@
       category: 'kids',
       tag: 'Kids · Animal',
       imageClass: 'product-image-kids',
-      price: 950,
+      price: 420,
       age: '3\u20138',
       image: 'https://i.imgur.com/NNR8OwG.jpeg',
-      fallbackEmoji: '🫎',
-      description: '26 pages of Elephants, Lions and other animals. Simple bold outlines for young artists.',
+      monogram: 'AK',
+      description: 'Two books featuring elephants, lions and other animals, with simple, bold outlines for young artists.',
       alt: 'Animal Kingdom colouring book'
     },
     {
@@ -796,11 +862,11 @@
       category: 'adults',
       tag: 'Adults · Mindfulness',
       imageClass: 'product-image-adults',
-      price: 1350,
+      price: 1250,
       age: '18+',
       image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&q=80',
-      fallbackEmoji: '🌀',
-      description: '50 intricate mandala designs to help you unwind. High-resolution printing on thick acid-free paper. A perfect gift for stress relief.',
+      monogram: 'MR',
+      description: 'Five books of intricate mandala designs to help you unwind. High-resolution printing on thick acid-free paper. A perfect gift for stress relief.',
       alt: 'Mandala Relaxation colouring book'
     },
     {
@@ -809,11 +875,11 @@
       category: 'kids',
       tag: 'Kids · Exploration',
       imageClass: 'product-image-kids',
-      price: 990,
+      price: 630,
       age: '4\u20138',
       image: 'https://i.imgur.com/mGeyBpm.jpeg',
-      fallbackEmoji: '🚀',
-      description: 'Blast off with pages of Exploration of earth, space or stars. Simple designs with wow backgrounds. Great for crayons and markers.',
+      monogram: 'EX',
+      description: 'Three exploration books covering Earth, space and the stars, with simple designs and bold backgrounds for crayons or markers.',
       alt: 'Space Explorer colouring book'
     },
     {
@@ -822,13 +888,30 @@
       category: 'adults',
       tag: 'Adults · Garden',
       imageClass: 'product-image-adults',
-      price: 1400,
+      price: 840,
       age: '18+',
       image: 'https://i.imgur.com/G7PJygG.jpeg',
-      fallbackEmoji: '🍃',
-      description: 'Serene garden scenes, ponds, trees and rock gardens. Detailed linework on premium paper. Includes mindful colouring tips.',
+      monogram: 'GD',
+      description: 'Four serene garden books featuring ponds, trees and rock gardens, with detailed linework and mindful colouring tips.',
       alt: 'Garden colouring book'
     }
+  ];
+
+  /* Single source of truth for pencil-set price */
+  var PEN_SET_PRICE = products.find(function (p) { return p.id === 4; }).price;
+
+  /* ================================================================
+     SINGLE ITEMS
+     Prices informed by Nexton Crafts Kenya reference.
+     ================================================================ */
+  var singleItems = [
+    { id: 101, title: 'Family Fun Time Colouring Book', kit: 'The Family Kit', price: 240, image: 'https://i.imgur.com/Vn6dy97.jpeg', alt: 'Single colouring book from the Family Kit' },
+    { id: 102, title: 'Pencil Kit (12 Pencils)', kit: 'The Pencils Set', price: PEN_SET_PRICE, image: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&q=80', alt: '12-pencil kit from The Pencils Set' },
+    { id: 103, title: 'Relaxation Mandala Book', kit: 'Mandala Relaxation', price: 450, image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&q=80', alt: 'Single mandala colouring book' },
+    { id: 104, title: 'Animal Kingdom Book', kit: 'Animal Kingdom', price: 240, image: 'https://i.imgur.com/NNR8OwG.jpeg', alt: 'Mini animal colouring book' },
+    { id: 105, title: 'Couples Book', kit: 'Garden', price: 240, image: 'https://i.imgur.com/RkgiCZS.jpeg', alt: 'Couples colouring book' },
+    { id: 106, title: 'Chill Garden Book', kit: 'Garden', price: 240, image: 'https://i.imgur.com/G7PJygG.jpeg', alt: 'Single garden colouring book' },
+    { id: 107, title: 'Premium Dual Tip Pen Kit (12 pieces)', kit: 'The Pencils Set', price: 950, image: 'https://i.imgur.com/PV953BV.jpeg', alt: 'Premium 12-pencil kit from The Pencils Set' }
   ];
 
   /* THEME */
@@ -836,8 +919,10 @@
   var themeToggle = document.getElementById('themeToggle');
   function setTheme(t) {
     root.setAttribute('data-theme', t);
+    themeToggle.setAttribute('aria-pressed', String(t === 'dark'));
     try { localStorage.setItem('colo-it-theme', t); } catch (e) {}
   }
+  setTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
   themeToggle.addEventListener('click', function () {
     setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
@@ -858,34 +943,37 @@
     var digits = value.replace(/\D/g, '');
     return /^(?:0[17]\d{8}|[17]\d{8}|254[17]\d{8})$/.test(digits);
   }
-  function waLink(p) {
+  /* NOTE: real newline, not escaped \\n */
+  function waLink(p, penQty) {
+    var pens = Number(penQty) || 0;
+    var total = p.price + pens * PEN_SET_PRICE;
     var msg = 'Hello Colo-It! I want to buy *' + p.title + '*' +
       (p.pages ? ' (' + p.pages + ' pages)' : '') +
-      ' for ' + formatKsh(p.price) + '.\n\n' +
+      (pens ? '\n*Pencil sets:* ' + pens + ' (' + formatKsh(pens * PEN_SET_PRICE) + ')' : '') +
+      '\n*Total:* ' + formatKsh(total) + '.\n\n' +
       'I understand I pay *50% now* and *50% on delivery*. Please assist.';
     return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
   }
   function categoryLabel(c) { return c === 'kids' ? 'Kids' : 'Adults'; }
 
+  /* Build a product image block with monogram fallback */
+  function buildProductImage(p, extraClass) {
+    var cls = extraClass ? ' ' + extraClass : '';
+    return '<div class="product-image' + cls + '" role="img" aria-label="' + p.alt + '">' +
+      '<img src="' + p.image + '" alt="' + p.alt + '" loading="lazy" ' +
+        'onerror="this.style.display=\'none\';this.nextElementSibling.classList.add(\'is-shown\');" />' +
+      '<div class="img-fallback" aria-hidden="true">' + (p.monogram || p.title.charAt(0)) + '</div>' +
+    '</div>';
+  }
+
   var currentCategory = 'all';
+  var productGrid = document.getElementById('productGrid');
+  var productCountEl = document.getElementById('productCount');
 
   function updateCounts() {
     document.getElementById('countAll').textContent = products.length;
     document.getElementById('countKids').textContent = products.filter(function (p) { return p.category === 'kids'; }).length;
     document.getElementById('countAdults').textContent = products.filter(function (p) { return p.category === 'adults'; }).length;
-  }
-
-  /* Render helpers */
-  var productGrid = document.getElementById('productGrid');
-  var productCountEl = document.getElementById('productCount');
-
-  function imgTag(p, extraClass) {
-    // URL-based image with emoji fallback if URL fails to load
-    return '<img src="' + p.image + '" alt="' + p.alt + '" loading="lazy" ' +
-           (extraClass ? 'class="' + extraClass + '" ' : '') +
-           'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\';" />' +
-           '<div class="fallback-emoji" style="display:none;place-items:center;width:100%;height:100%;font-size:3.5rem;">' +
-           p.fallbackEmoji + '</div>';
   }
 
   function renderProducts() {
@@ -894,44 +982,74 @@
       : products.filter(function (p) { return p.category === currentCategory; });
 
     var label = currentCategory === 'all' ? 'all books' : categoryLabel(currentCategory).toLowerCase() + ' books';
+    /* Status region announces only the count, not every card */
     productCountEl.innerHTML = 'Showing <strong>' + filtered.length + '</strong> ' + label;
 
     if (filtered.length === 0) {
       productGrid.innerHTML =
-        '<div class="empty-state"><div style="font-size:3rem;opacity:.3;">📚</div>' +
-        '<h3>No books here yet</h3>' +
+        '<div class="empty-state"><h3>No books here yet</h3>' +
         '<p>Check back soon for new ' + categoryLabel(currentCategory).toLowerCase() + ' colouring books.</p></div>';
       return;
     }
 
-    var html = '';
-    filtered.forEach(function (p) {
-      html +=
-        '<article class="product-card" data-id="' + p.id + '">' +
-          '<div class="product-image ' + p.imageClass + '" role="img" aria-label="' + p.alt + '">' +
-            imgTag(p) +
-            '<span class="product-tag">' + p.tag + '</span>' +
+    productGrid.innerHTML = filtered.map(function (p) {
+      return '<article class="product-card" data-id="' + p.id + '">' +
+        buildProductImage(p, p.imageClass) +
+        '<span class="product-tag">' + p.tag + '</span>' +
+        '<div class="product-body">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="product-desc">' + p.description + '</p>' +
+          '<div class="product-meta">' +
+            '<span class="product-price">' + formatKsh(p.price) + '</span>' +
+            '<span class="product-age">' + p.age + '</span>' +
           '</div>' +
-          '<div class="product-body">' +
-            '<h3>' + p.title + '</h3>' +
-            (p.pages ? '<div class="product-pages">📄 ' + p.pages + ' pages</div>' : '') +
-            '<p class="product-desc">' + p.description + '</p>' +
-            '<div class="product-meta">' +
-              '<span class="product-price">' + formatKsh(p.price) + '</span>' +
-              '<span class="product-age">' + p.age + '</span>' +
-            '</div>' +
-            '<button type="button" class="btn-open" data-id="' + p.id + '">' +
-              '👁️ Open This' +
-            '</button>' +
-          '</div>' +
-        '</article>';
-    });
-    productGrid.innerHTML = html;
+          '<button type="button" class="btn-open" data-id="' + p.id + '">Open This</button>' +
+        '</div>' +
+      '</article>';
+    }).join('');
 
     productGrid.querySelectorAll('.btn-open').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
         openDetail(Number(btn.dataset.id));
+      });
+    });
+  }
+
+  function renderSingles() {
+    var grid = document.getElementById('singlesGrid');
+    if (!grid) return;
+
+    grid.innerHTML = singleItems.map(function (p) {
+      var showPens = p.kit !== 'The Pencils Set';
+      return '<article class="product-card">' +
+        buildProductImage(p, 'product-image-single') +
+        '<div class="product-body">' +
+          '<h3>' + p.title + '</h3>' +
+          '<p class="single-kit">from <strong>' + p.kit + '</strong></p>' +
+          '<div class="product-meta">' +
+            '<span class="product-price">' + formatKsh(p.price) + '</span>' +
+          '</div>' +
+          (showPens
+            ? '<label class="single-pen-option"><input type="checkbox" class="single-add-pens" data-single="' + p.id + '"> Add a pencil set (' + formatKsh(PEN_SET_PRICE) + ')</label>'
+            : '') +
+          '<button type="button" class="btn-open" data-single="' + p.id + '">Order This</button>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+
+    grid.querySelectorAll('[data-single]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var p = singleItems.find(function (x) { return x.id === Number(btn.dataset.single); });
+        if (!p) return;
+        var checkbox = grid.querySelector('.single-add-pens[data-single="' + p.id + '"]');
+        var addPens = !!(checkbox && checkbox.checked);
+        var total = p.price + (addPens ? PEN_SET_PRICE : 0);
+        var msg = 'Hi Colo-It! I want the single item *' + p.title +
+                  '* (from ' + p.kit + ') at ' + formatKsh(p.price) + '.' +
+                  (addPens ? '\n*Pencil set:* 1 (' + formatKsh(PEN_SET_PRICE) + ')' : '') +
+                  '\n*Total:* ' + formatKsh(total) + '. Please assist.';
+        window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
       });
     });
   }
@@ -945,32 +1063,39 @@
     var p = products.find(function (x) { return x.id === id; });
     if (!p) return;
 
+    var showPenOption = p.id !== 4;
+
     detailCard.innerHTML =
       '<button class="close-detail" id="closeDetailBtn" aria-label="Close">&times;</button>' +
       '<div class="detail-grid">' +
         '<div class="detail-image">' +
           '<img src="' + p.image + '" alt="' + p.alt + '" ' +
-               'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';" />' +
-          '<div class="fallback-emoji" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:5rem;">' +
-            p.fallbackEmoji + '</div>' +
+            'onerror="this.style.display=\'none\';this.nextElementSibling.classList.add(\'is-shown\');" />' +
+          '<div class="img-fallback is-shown" aria-hidden="true" style="font-size:2rem;">' + (p.monogram || p.title.charAt(0)) + '</div>' +
         '</div>' +
         '<div>' +
           '<h2 class="detail-title" id="detailTitle">' + p.title + '</h2>' +
           '<div class="detail-chips">' +
-            (p.pages ? '<span class="detail-chip pages">📄 ' + p.pages + ' pages</span>' : '') +
             '<span class="detail-chip ' + p.category + '">' +
-              (p.category === 'kids' ? '🧒 Kids' : '👤 Adults') +
+              (p.category === 'kids' ? 'Kids' : 'Adults') +
             '</span>' +
             '<span class="detail-chip">' + p.age + '</span>' +
           '</div>' +
           '<p class="detail-description">' + p.description + '</p>' +
-          '<div class="detail-price">' + formatKsh(p.price) + ' <small>KSH</small></div>' +
+          (showPenOption
+            ? '<div class="detail-pen-option">' +
+                '<label for="detailPenQty">Pencil sets to include (' + formatKsh(PEN_SET_PRICE) + ' each)</label>' +
+                '<input id="detailPenQty" type="number" min="0" max="100" value="0" inputmode="numeric" aria-describedby="detailPenHint">' +
+                '<small id="detailPenHint">Leave at 0 if you do not need an extra set.</small>' +
+              '</div>'
+            : '') +
+          '<div class="detail-price" id="detailTotal">' + formatKsh(p.price) + ' <small>KES total</small></div>' +
           '<div class="payment-note">' +
-            '<span style="font-size:1.6rem;">💳</span>' +
+            '<span style="font-size:1.6rem;" aria-hidden="true">💳</span>' +
             '<span><strong>Pay 50% now</strong> via M-Pesa and <strong>50% on delivery</strong>. We confirm on WhatsApp.</span>' +
           '</div>' +
-          '<a class="btn-wa-large" href="' + waLink(p) + '" target="_blank" rel="noopener">' +
-            '💬 Order on WhatsApp' +
+          '<a class="btn-wa-large" id="detailOrderLink" href="' + waLink(p, 0) + '" target="_blank" rel="noopener">' +
+            'Order on WhatsApp' +
           '</a>' +
         '</div>' +
       '</div>';
@@ -978,8 +1103,19 @@
     detailReturnFocus = document.activeElement;
     detailOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+
     var closeButton = document.getElementById('closeDetailBtn');
     closeButton.addEventListener('click', closeDetail);
+
+    var penQtyInput = document.getElementById('detailPenQty');
+    if (penQtyInput) {
+      penQtyInput.addEventListener('input', function () {
+        var qty = Number(penQtyInput.value);
+        if (!Number.isInteger(qty) || qty < 0 || qty > 100) return;
+        document.getElementById('detailTotal').innerHTML = formatKsh(p.price + qty * PEN_SET_PRICE) + ' <small>KES total</small>';
+        document.getElementById('detailOrderLink').href = waLink(p, qty);
+      });
+    }
     closeButton.focus();
   }
 
@@ -993,42 +1129,50 @@
   });
   document.addEventListener('keydown', function (e) {
     if (!detailOverlay.classList.contains('active')) return;
-    if (e.key === 'Escape') {
-      closeDetail();
-      return;
-    }
+    if (e.key === 'Escape') { closeDetail(); return; }
     if (e.key === 'Tab') {
-      var focusable = detailCard.querySelectorAll('a[href], button:not([disabled])');
+      var focusable = detailCard.querySelectorAll('a[href], button:not([disabled]), input');
       if (!focusable.length) return;
       var first = focusable[0];
       var last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
   });
 
-  /* TABS */
-  document.querySelectorAll('.tab-btn').forEach(function (btn) {
+  /* TABS — proper roving tabindex + arrow keys */
+  var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+  var tabPanel = document.getElementById('productGrid');
+  tabButtons.forEach(function (btn) {
     btn.addEventListener('click', function () {
       var cat = btn.dataset.category;
       if (cat === currentCategory) return;
       currentCategory = cat;
-      document.querySelectorAll('.tab-btn').forEach(function (b) {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', 'false');
+      tabButtons.forEach(function (b) {
+        var selected = b === btn;
+        b.classList.toggle('active', selected);
+        b.setAttribute('aria-selected', String(selected));
+        b.tabIndex = selected ? 0 : -1;
       });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
+      tabPanel.setAttribute('aria-labelledby', btn.id);
       renderProducts();
     });
+    btn.addEventListener('keydown', function (e) {
+      var index = tabButtons.indexOf(btn);
+      var nextIndex = e.key === 'ArrowRight' ? (index + 1) % tabButtons.length
+        : e.key === 'ArrowLeft' ? (index - 1 + tabButtons.length) % tabButtons.length
+        : e.key === 'Home' ? 0
+        : e.key === 'End' ? tabButtons.length - 1 : -1;
+      if (nextIndex !== -1) {
+        e.preventDefault();
+        tabButtons[nextIndex].focus();
+        tabButtons[nextIndex].click();
+      }
+    });
   });
+  tabButtons.forEach(function (btn) { btn.tabIndex = btn.dataset.category === currentCategory ? 0 : -1; });
 
-  /* Keep the floating CTA clear of the form controls on mobile and desktop. */
+  /* Floating CTA hides when order form is in view */
   var floatingOrder = document.querySelector('.floating-order');
   var orderSection = document.getElementById('order');
   if (floatingOrder && orderSection && 'IntersectionObserver' in window) {
@@ -1160,8 +1304,7 @@
 
   /* FAQ */
   document.querySelectorAll('.faq-q').forEach(function (q) {
-    q.setAttribute('aria-expanded', 'false');
-    function toggle() {
+    q.addEventListener('click', function () {
       var item = q.parentElement;
       var wasOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(function (i) {
@@ -1172,15 +1315,12 @@
         item.classList.add('open');
         q.setAttribute('aria-expanded', 'true');
       }
-    }
-    q.addEventListener('click', toggle);
-    q.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
     });
   });
 
   updateCounts();
   renderProducts();
+  renderSingles();
 })();
 </script>
 </body>
