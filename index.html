@@ -1038,7 +1038,7 @@
       '</article>';
     }).join('');
 
-    grid.querySelectorAll('[data-single]').forEach(function (btn) {
+    grid.querySelectorAll('button.btn-open[data-single]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var p = singleItems.find(function (x) { return x.id === Number(btn.dataset.single); });
         if (!p) return;
